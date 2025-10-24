@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signatory Request Form</title>
+
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+    <script src="taskpane.js" type="text/javascript"></script>
+
+    <style>
+        #app-body {
+            padding: 20px;
+            padding-top: 10px;
+        }
+        .ms-Grid-row {
+            margin-top: 15px;
+        }
+        .ms-TextField-field, .ms-Dropdown-title {
+            width: 100%;
+            box-sizing: border-box; /* Ensures padding doesn't break layout */
+        }
+        .ms-TextField-field[type="email"],
+        .ms-TextField-field[placeholder*="Representative"] {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body class="ms-Fabric" dir="ltr">
+    <main id="app-body" class="ms-font-m">
+        
+        <div class="ms-Grid-row">
+            <label class="ms-Label">1. Confirmation of Approval</label>
+            <select class="ms-Dropdown-title" id="confirm-approval" required>
+                <option value="" disabled selected>Please confirm draft is approved...</option>
+                <option value="YES - I confirm the draft is approved by the counterparty.">YES - I confirm approval.</option>
+                <option value="NO - Draft is NOT approved.">NO - Draft is NOT approved.</option>
+            </select>
+        </div>
+
+        <div class="ms-Grid-row">
+            <label class="ms-Label">2. Background / Context for Signatories</label>
+            <textarea class="ms-TextField-field" id="background-context" rows="4" placeholder="Add important background about the matter here"></textarea>
+        </div>
+
+        <div class="ms-Grid-row">
+            <label class="ms-Label">3. Counterparty Signatory Details</label>
+            <input class="ms-TextField-field" id="counterparty-name" type="text" placeholder="Name">
+            <input class="ms-TextField-field" id="counterparty-email" type="email" placeholder="E-mail">
+        </div>
+
+        <div class="ms-Grid-row">
+            <label class="ms-Label">4. XCD Signatory Details</label>
+            <input class="ms-TextField-field" id="xcd-name" type="text" placeholder="Name">
+            <input class="ms-TextField-field" id="xcd-email" type="email" placeholder="E-mail">
+        </div>
+
+        <div class="ms-Grid-row">
+            <label class="ms-Label">5. Points of Contact</label>
+            <input class="ms-TextField-field" id="xcd-rep" type="text" placeholder="XCD Representative">
+            <input class="ms-TextField-field" id="counterparty-rep" type="text" placeholder="Counterparty Representative">
+        </div>
+
+        <div style="margin-top: 25px;">
+            <button class="ms-Button ms-Button--primary" id="btn-insert">
+                <span class="ms-Button-label">Insert into Email</span>
+            </button>
+            <button class="ms-Button" id="btn-submit" style="margin-left: 10px;">
+                <span class="ms-Button-label">Submit to Manager</span>
+            </button>
+        </div>
+
+    </main>
+</body>
+</html>
